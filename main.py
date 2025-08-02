@@ -127,7 +127,7 @@ def preprocess_image(image_path, debug=False):
         plt.show()
 
     # 5. 二值化（强化黑白对比）
-    threshold = 128  # 可调整阈值（0-255）
+    threshold = 180  # 可调整阈值（0-255）
     new_img = new_img.point(lambda p: 0 if p < threshold else 255)
 
     if debug:
@@ -356,7 +356,7 @@ def main():
         train_model(model_type='CNN', epochs=15)  # 首次训练建议用CNN
 
     # 替换为你的图片路径
-    image_path = r"test number\9_image.jpg"
+    image_path = r"test number\0_image.jpg"
 
     # 执行识别（debug=True 可开启预处理调试）
     print(f"开始识别图像: {image_path}")
