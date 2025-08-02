@@ -356,7 +356,7 @@ def main():
         train_model(model_type='CNN', epochs=15)  # 首次训练建议用CNN
 
     # 替换为你的图片路径
-    image_path = r"D:\pycharm workplace\手写字识别\8image.jpg"
+    image_path = r"test number\9_image.jpg"
 
     # 执行识别（debug=True 可开启预处理调试）
     print(f"开始识别图像: {image_path}")
