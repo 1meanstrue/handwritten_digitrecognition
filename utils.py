@@ -56,5 +56,4 @@ def plot_speed_comparison(cpu_time, gpu_time, task_name):
     plt.title(f'CPU与GPU{task_name}速率对比')
     for i, v in enumerate([cpu_time, gpu_time]):
         plt.text(i, v+0.01, f'{v:.4f}s', ha='center')
-    plt.savefig(f'{task_name}_speed_comparison.png')
     plt.show()

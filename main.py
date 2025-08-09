@@ -66,7 +66,7 @@ def compare_cpu_gpu_training(model_type='CNN', epochs=10, batch_size=64):
 def main():
     # 配置
     model_type = 'ImprovedCNN'  # 使用改进的模型
-    epochs = 10  # 训练轮次
+    epochs = 30  # 训练轮次
     batch_size = 128  # 批次大小
 
     # 1. 对比CPU和GPU的完整训练速率

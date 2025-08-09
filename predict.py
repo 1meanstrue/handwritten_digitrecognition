@@ -97,7 +97,7 @@ def batch_validate_test_dataset(
         save_errors=False,
         error_save_dir='error_samples'
 ):
-    """批量验证MNIST官方测试集，收集错误案例并按样本索引升序排序"""
+    """批量验证MNIST官方测试集，收集错误案例"""
     correct = 0
     total = 0
     error_cases = []  # 存储格式: (索引, 真实标签, 预测结果, 置信度, 图像数据, 概率分布)
@@ -187,16 +187,16 @@ def batch_validate_test_dataset(
             except Exception as e:
                 print(f"处理样本索引{idx}失败: {e}")
 
-    # 按样本索引升序排序错误案例（核心修改）
+    # 按样本索引升序排序错误案例
     error_cases.sort(key=lambda x: x[0])
 
     # 计算并显示准确率
     accuracy = (correct / total) * 100 if total > 0 else 0
     print(f"\n批量验证结果：总样本数 {total} | 正确 {correct} | 准确率 {accuracy:.2f}%")
 
-    # 错误案例分析（已按索引排序）
+    # 错误案例分析
     if error_cases:
-        print(f"\n===== 错误案例分析（按样本索引升序） =====")
+        print(f"\n===== 错误案例分析=====")
         print(f"总错误数: {len(error_cases)}")
 
         # 统计错误分布
@@ -210,7 +210,7 @@ def batch_validate_test_dataset(
         for digit in sorted(error_distribution.keys()):
             print(f"数字 {digit}: {error_distribution[digit]} 次错误")
 
-        # 显示前5个错误案例（按索引排序后的结果）
+        # 显示错误案例
         print(f"\n错误案例详情:")
         for case in error_cases[:]:
             print(f"样本索引: {case[0]} | 真实: {case[1]} | 预测: {case[2]} | 置信度: {case[3]:.2f}%")
