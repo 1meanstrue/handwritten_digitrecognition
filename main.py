@@ -92,7 +92,7 @@ def main():
         # 3. 可视化错误案例 - 修复变量未定义问题
         if error_cases:
             print(f"\n=== 可视化错误案例 ===")
-            printf("       见生成Plots     ")
+            print("        见生成Plots     ")
             num_to_show = 100  # 定义要显示的错误案例数量
             visualize_error_cases(error_cases, num_to_show)
 
